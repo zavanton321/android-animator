@@ -1,4 +1,4 @@
-package com.example.animation
+package com.example.animation.main
 
 import android.animation.Animator
 import android.animation.AnimatorSet
@@ -6,6 +6,7 @@ import android.animation.ObjectAnimator
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.animation.R
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
