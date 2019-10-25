@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:state_pressed="true">
+
+        <set android:ordering="together">
+
+            <objectAnimator
+                android:duration="250"
+                android:interpolator="@android:anim/decelerate_interpolator"
+                android:propertyName="scaleX"
+                android:valueFrom="1"
+                android:valueTo="1.2"
+                android:valueType="floatType"
+                />
+
+            <objectAnimator
+                android:duration="250"
+                android:interpolator="@android:anim/decelerate_interpolator"
+                android:propertyName="backgroundColor"
+                android:valueFrom="@android:color/holo_red_dark"
+                android:valueTo="@android:color/holo_green_dark"
+                android:valueType="colorType"
+                />
+        </set>
+    </item>
+
+    <item android:state_pressed="false">
+
+        <set android:ordering="together">
+
+            <objectAnimator
+                android:duration="250"
+                android:interpolator="@android:anim/decelerate_interpolator"
+                android:propertyName="scaleX"
+                android:valueFrom="1.2"
+                android:valueTo="1"
+                android:valueType="floatType"
+                />
+
+            <objectAnimator
+                android:duration="250"
+                android:interpolator="@android:anim/decelerate_interpolator"
+                android:propertyName="backgroundColor"
+                android:valueFrom="@android:color/holo_green_dark"
+                android:valueTo="@android:color/holo_red_dark"
+                android:valueType="colorType"
+                />
+        </set>
+    </item>
+</selector>
