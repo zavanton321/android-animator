@@ -1,10 +1,9 @@
 package com.example.animation.object_animator
 
+import android.animation.AnimatorInflater
 import android.animation.AnimatorSet
 import android.animation.ObjectAnimator
 import android.os.Bundle
-import android.view.animation.AccelerateDecelerateInterpolator
-import android.view.animation.AccelerateInterpolator
 import android.view.animation.DecelerateInterpolator
 import androidx.appcompat.app.AppCompatActivity
 import com.example.animation.R
@@ -17,11 +16,12 @@ class ObjectAnimatorActivity : AppCompatActivity() {
         setContentView(R.layout.activity_object_animator)
 
         ivCat.setOnClickListener {
-            animateCat()
+            // animateCatProgrammatically()
+            animateCatFromResource()
         }
     }
 
-    private fun animateCat() {
+    private fun animateCatProgrammatically() {
         val animationX = ObjectAnimator.ofFloat(ivCat, "scaleX", 3F)
         val animationY = ObjectAnimator.ofFloat(ivCat, "scaleY", 3F)
 
@@ -30,5 +30,11 @@ class ObjectAnimatorActivity : AppCompatActivity() {
         animatorSet.duration = 500
         animatorSet.interpolator = DecelerateInterpolator()
         animatorSet.start()
+    }
+
+    private fun animateCatFromResource() {
+        val set = AnimatorInflater.loadAnimator(this, R.animator.cat_animator) as AnimatorSet
+        set.setTarget(ivCat)
+        set.start()
     }
 }
