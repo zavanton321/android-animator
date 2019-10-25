@@ -12,7 +12,15 @@ class AnimationListActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_animation_list)
 
-        val animationDrawable = ivAnimation.drawable as AnimationDrawable
+        ivAnimation.setOnClickListener {
+            animateTheCat()
+        }
+    }
+
+    private fun animateTheCat() {
+        ivAnimation.setImageDrawable(null)
+        ivAnimation.setBackgroundResource(R.drawable.custom_animation)
+        val animationDrawable = ivAnimation.background as AnimationDrawable
         animationDrawable.start()
     }
 }
